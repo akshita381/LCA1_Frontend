@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            background-color: #000;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            display: block;
+            max-width: 150px;
+            margin: 0 auto;
+            height: auto;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            min-height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://via.placeholder.com/1920x1080');
+            background-size: cover;
+            color: white;
+        }
+
+        .book-btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background-color: #00ff00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .booking-form {
+            display: none;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .confirmation {
+            display: none;
+            color: #00ff00;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            .logo {
+                max-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="uber-ride.png" 
+             alt="Uber Logo" 
+             class="logo">
+
+        <button class="book-btn" onclick="showBookingForm()">Book a Ride</button>
+
+        <form class="booking-form" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Pickup Location" required>
+            <input type="text" placeholder="Drop Location" required>
+            <button type="submit" class="book-btn">Confirm Locations</button>
+        </form>
+
+        <div class="confirmation"></div>
+    </div>
+
+    <script>
+        function showBookingForm() {
+            document.querySelector('.book-btn').style.display = 'none';
+            document.querySelector('.booking-form').style.display = 'block';
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            document.querySelector('.booking-form').style.display = 'none';
+            document.querySelector('.confirmation').style.display = 'block';
+            document.querySelector('.confirmation').textContent = 
+                "Drop and pickup location is set!";
+        }
+    </script>
+</body>
+</html>
+xml
