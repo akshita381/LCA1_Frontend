@@ -1,5 +1,9 @@
 # Uber Clone Project
+![op1](output1.jpg)
+![op2](output2.jpg)
+![op3](output3.jpg)
 A simplified clone of the Uber interface, focusing on UI/UX design principles.
+
 
 ## Overview
 This project aims to replicate the basic functionality and design of the Uber app's home page for UI/UX Design course MIT SY SOD. It includes features such as a navigation bar, a centered logo, a "Book a Ride" button, and a form to input pickup and drop locations.
